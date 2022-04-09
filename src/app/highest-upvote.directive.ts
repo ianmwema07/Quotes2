@@ -1,10 +1,12 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appHighestUpvote]'
 })
 export class HighestUpvoteDirective {
 
-  constructor() { }
+  constructor(private elem:ElementRef) { 
+    elem.nativeElement.style.backgroundColor = "blue"
+  }
 
 }
