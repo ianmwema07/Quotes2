@@ -1,8 +1,4 @@
 # Quotes2
-
-
-
-# Quotes2
 #### This is a Quotes Project
 #### By **Ian Kariuki**
 ## Description
