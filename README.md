@@ -1,5 +1,13 @@
 # Quotes2
 
+
+
+# Quotes2
+#### This is a Quotes Project
+#### By **Ian Kariuki**
+## Description
+  This is an angular application that collects quotes through a form and they can be upvoted or downvoted. Quotes are later separated depending on whether they have been downvoted or upvoted.
+## Setup/Installation Requirements
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
@@ -25,3 +33,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies Used
+* HTML.
+* CSS.
+* BOOTSTRAP.
+* JAVASCRIPT
+* JQUERY
+* Angular
+* GIT/GITHUB.
+## Support and contact details
+* IAN KARIUKI ian.kariuki@student.moringa.com
+### License
+**The MIT License (MIT)**
+Copyright (c) 2022 **Ian Kariuki**
