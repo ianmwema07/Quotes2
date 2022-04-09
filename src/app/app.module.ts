@@ -9,6 +9,7 @@ import { DayCountPipe } from './day-count.pipe';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 
 import { FormsModule } from '@angular/forms';
+import { HighestUpvoteDirective } from './highest-upvote.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     QuoteComponent,
     QuoteDetailsComponent,
     DayCountPipe,
-    QuoteFormComponent
+    QuoteFormComponent,
+    HighestUpvoteDirective
   ],
   imports: [
     BrowserModule,
