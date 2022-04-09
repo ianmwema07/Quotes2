@@ -8,10 +8,14 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
-    {id: 1,quote: "Hello",author: "Ian",name: "Jack",upvote: 2, downvote: 3},
-    {id: 2,quote: "Hello",author: "Ian", name: "Jack",upvote: 2,downvote: 3},
-       
-  ]
+    new Quote(1,"Hello","Ian","Jack",2, 3),
+    new Quote(2,"Hello","Harry", "Tess",2,3),
+    
+  ];
+
+  showDetails(index:number){
+    this.quotes[index].showDetails = !this.quotes[index].showDetails;
+  }
 
   constructor() { }
 

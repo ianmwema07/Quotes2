@@ -1,9 +1,15 @@
 <div>
   <h1>My Quotess</h1>
   <hr>
-  <ul *ngFor="let quote of quotes">
-    <li>
-      {{ quote.name }}
-    </li>
+  <ul>
+    <div *ngFor="let quote of quotes;let i = index">
+      <li>
+        <h2> " {{ quote.quote }} "</h2>
+          <p>Upvote : {{ quote.upvote }}</p>
+          <p>Down : {{ quote.downvote }}</p>
+          <button class="btn btn-outline-success" (click)="showDetails(i)" >Show Details</button>
+          <app-quote-details *ngIf="quote.showDetails" [quote]="quote" ></app-quote-details>
+      </li>
+    </div>
   </ul>
 </div>

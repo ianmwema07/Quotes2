@@ -5,6 +5,7 @@ export class Quote {
     name: string;
     upvote: number;
     downvote: number;
+    showDetails:boolean;
 
     constructor(id:number, quote:string, author:string, name:string, upvote:number, downvote:number ) {
         this.id = id;
@@ -13,5 +14,6 @@ export class Quote {
         this.name = name;
         this.upvote = upvote;
         this.downvote = downvote;
+        this.showDetails=false;
     }
 }
