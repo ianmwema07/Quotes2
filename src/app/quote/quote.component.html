@@ -6,13 +6,28 @@
       <hr>
       <ul>
         <div *ngFor="let quote of quotes;let i = index">
-          <li *ngIf="quote.id == 1" appHighestUpvote >
-            <h2> " {{ quote.quote }} {{ quote.createDate |dayCount }}"</h2>
-              <button class="btn btn-success" (click)="upVote(i)">Upvote : {{ quote.upvote }}</button>&nbsp;&nbsp;
-              <button class="btn btn-outline-danger" (click)="downVote(i)">Down : {{ quote.downvote }}</button><br>
-              <button class="btn btn-outline-success mt-3" (click)="showDetails(i)" >Show Details</button>
-              <app-quote-details *ngIf="quote.showDetails" [quote]="quote" (isComplete)="deleteQuote($event,i)"></app-quote-details>
-          </li>
+          <div *ngIf='quote.upvote==highest;then highlight else empty'>
+
+          </div>
+          <ng-template #highlight>
+            <li appHighestUpvote >
+              <h2> " {{ quote.quote }} {{ quote.createDate |dayCount }}"</h2>
+                <button class="btn btn-success" (click)="upVote(i)">Upvote : {{ quote.upvote }}</button>&nbsp;&nbsp;
+                <button class="btn btn-outline-danger" (click)="downVote(i)">Down : {{ quote.downvote }}</button><br>
+                <button class="btn btn-outline-success mt-3" (click)="showDetails(i)" >Show Details</button>
+                <app-quote-details *ngIf="quote.showDetails" [quote]="quote" (isComplete)="deleteQuote($event,i)"></app-quote-details>
+            </li>
+          </ng-template>
+          <ng-template #empty>
+            <li>
+              <h2> " {{ quote.quote }} {{ quote.createDate |dayCount }}"</h2>
+                <button class="btn btn-success" (click)="upVote(i)">Upvote : {{ quote.upvote }}</button>&nbsp;&nbsp;
+                <button class="btn btn-outline-danger" (click)="downVote(i)">Down : {{ quote.downvote }}</button><br>
+                <button class="btn btn-outline-success mt-3" (click)="showDetails(i)" >Show Details</button>
+                <app-quote-details *ngIf="quote.showDetails" [quote]="quote" (isComplete)="deleteQuote($event,i)"></app-quote-details>
+            </li>
+          </ng-template>
+
         </div>
       </ul>    
     </div>

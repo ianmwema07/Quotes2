@@ -9,9 +9,14 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
     new Quote(1,"Hello","Ian","Jack",2, 3, new Date(2022,4,7)),
-    new Quote(2,"Hello","Harry", "Tess",2,3, new Date(2022,1,8)),
+    new Quote(2,"Hello","Harry", "Tess",1,3, new Date(2022,1,8)),
+    new Quote(1,"Hello","Harry", "Tess",0,3, new Date(2022,1,8)),
     
   ];
+
+  collection: number[] = this.quotes.map(quote=>quote.upvote)
+  highest = Math.max(...this.collection)
+
  
   addNewQuote(quote:any){
     let quoteLength = this.quotes.length;
