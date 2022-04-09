@@ -5,10 +5,10 @@
     <div *ngFor="let quote of quotes;let i = index">
       <li>
         <h2> " {{ quote.quote }} "</h2>
-          <p>Upvote : {{ quote.upvote }}</p>
-          <p>Down : {{ quote.downvote }}</p>
-          <button class="btn btn-outline-success" (click)="showDetails(i)" >Show Details</button>
-          <app-quote-details *ngIf="quote.showDetails" [quote]="quote" ></app-quote-details>
+          <button class="btn btn-success" (click)="upVote(i)">Upvote : {{ quote.upvote }}</button>&nbsp;&nbsp;
+          <button class="btn btn-outline-danger" (click)="downVote(i)">Down : {{ quote.downvote }}</button><br>
+          <button class="btn btn-outline-success mt-3" (click)="showDetails(i)" >Show Details</button>
+          <app-quote-details *ngIf="quote.showDetails" [quote]="quote" (isComplete)="completeQuote($event,i)"></app-quote-details>
       </li>
     </div>
   </ul>

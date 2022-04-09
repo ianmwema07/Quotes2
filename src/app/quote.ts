@@ -6,6 +6,7 @@ export class Quote {
     upvote: number;
     downvote: number;
     showDetails:boolean;
+    cr
 
     constructor(id:number, quote:string, author:string, name:string, upvote:number, downvote:number ) {
         this.id = id;

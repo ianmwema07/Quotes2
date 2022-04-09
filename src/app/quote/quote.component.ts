@@ -12,11 +12,24 @@ export class QuoteComponent implements OnInit {
     new Quote(2,"Hello","Harry", "Tess",2,3),
     
   ];
+ 
+  upVote(index:number){ 
+    this.quotes[index].upvote++;
+  }
+
+  downVote(index:number){
+    this.quotes[index].downvote++;
+  }
 
   showDetails(index:number){
     this.quotes[index].showDetails = !this.quotes[index].showDetails;
   }
 
+  completeQuote(isComplete: any, index: number){
+    if(isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {
