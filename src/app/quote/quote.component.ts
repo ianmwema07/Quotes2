@@ -8,8 +8,8 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] = [
-    new Quote(1,"Hello","Ian","Jack",2, 3, new Date(2022,4,7)),
-    new Quote(2,"Hello","Harry", "Tess",1,3, new Date(2022,1,8)),
+    new Quote(1,"I have a dream","Martin Luther King","Jack",2, 3, new Date(2022,4,7)),
+    new Quote(2,"To my friends everything, to my enemies the law","Vladmir Putin", "Tess",1,3, new Date(2022,1,8)),
     new Quote(1,"Hello","Harry", "Tess",0,3, new Date(2022,1,8)),
   ];
 
