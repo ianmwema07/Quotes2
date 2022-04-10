@@ -11,11 +11,23 @@ export class QuoteComponent implements OnInit {
     new Quote(1,"Hello","Ian","Jack",2, 3, new Date(2022,4,7)),
     new Quote(2,"Hello","Harry", "Tess",1,3, new Date(2022,1,8)),
     new Quote(1,"Hello","Harry", "Tess",0,3, new Date(2022,1,8)),
-    
   ];
 
+  preNum!:number
+  lastNum!:number
+  counter!:number
+
   collection: number[] = this.quotes.map(quote=>quote.upvote)
-  highest = Math.max(...this.collection)
+  highest(){
+    this.preNum = 0
+    this.lastNum = 0
+
+    for(this.counter=0 ; this.counter < this.quotes.length; this.counter++) {
+      this.lastNum = this.quotes[this.counter].upvote;
+      if(this.lastNum > this.preNum){this.preNum = this.lastNum}
+    }
+    return  this.preNum
+  }
 
  
   addNewQuote(quote:any){
